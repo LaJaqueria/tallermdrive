@@ -1,0 +1,1 @@
+XGM music "music/sor4.vgm" AUTO 
