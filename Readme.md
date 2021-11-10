@@ -8,6 +8,7 @@ En este repositorio, podras encontrar ejemplos del taller de creación de videoj
 * sprites: Uso de Sprites junto con fondos.
 * Musica y Sonido (*): Uso de Musica y Sonido.
 * Scroll: uso de fondos de mayor tamaño y usando scroll.
+* Tileset: Generación dinamica de fondos, usando tilesets.
 
 ## Compilación y uso
 
