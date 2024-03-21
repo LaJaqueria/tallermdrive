@@ -24,15 +24,15 @@ int main()
     SYS_disableInts();
     VDP_setScreenWidth320();
 
-    u16 ind = TILE_USERINDEX;
+    u16 ind = TILE_USER_INDEX;
     SPR_init();
     VDP_drawImageEx(BG_B,&fondoa,TILE_ATTR_FULL(PAL0,FALSE,FALSE,FALSE,ind),0,0,TRUE,CPU);
     ind+=fondoa.tileset->numTile;
     VDP_drawImageEx(BG_A,&fondob,TILE_ATTR_FULL(PAL1,FALSE,FALSE,FALSE,ind),0,0,TRUE,CPU);
     ind+=fondob.tileset->numTile;
-    VDP_setPalette(PAL2,elli_sprt.palette->data);
+    PAL_setPalette(PAL2,elli_sprt.palette->data,DMA);
     elli = SPR_addSprite(&elli_sprt,sprx,spry,TILE_ATTR(PAL2,FALSE,FALSE,FALSE));
-    SND_startPlay_XGM(music);
+    XGM_startPlay(music);
     SYS_enableInts();
     while(1)
     {

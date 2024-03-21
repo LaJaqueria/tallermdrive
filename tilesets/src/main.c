@@ -21,9 +21,9 @@ u16 spry=145;
 int main()
 {
     SYS_disableInts();
-    u16 ind= TILE_USERINDEX;
+    u16 ind= TILE_USER_INDEX;
     VDP_loadTileSet(&foresttileset,ind,CPU);
-    VDP_setPalette(PAL1,foresttilesetPal.data);
+    PAL_setPalette(PAL1,foresttilesetPal.data,DMA);
 
     for (int i = 0; i < 40; i++)
     {
@@ -37,7 +37,7 @@ int main()
     }
     SPR_init();
     ind+=foresttileset.numTile;
-    VDP_setPalette(PAL2,zerasprt.palette->data);
+    PAL_setPalette(PAL2,zerasprt.palette->data,DMA);
     elli = SPR_addSprite(&zerasprt,sprx,spry,TILE_ATTR(PAL2,FALSE,FALSE,FALSE));
     SPR_setAnim(elli,4);
     SYS_enableInts();

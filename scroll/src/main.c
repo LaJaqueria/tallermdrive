@@ -18,7 +18,7 @@ u8 xorder=0;
 u16 offset=0;
 s16 column_update= 0;
 u8 cuentaPixel=0;
-u16 ind=TILE_USERINDEX;
+u16 ind=TILE_USER_INDEX;
 
 Sprite * elli;
 
@@ -33,7 +33,7 @@ int main()
     VDP_drawImageEx(BG_B, &fondob,TILE_ATTR_FULL(PAL0,FALSE,FALSE,FALSE,ind),0,0,TRUE,CPU);
     ind+= fondob.tileset->numTile;
     VDP_drawImageEx(BG_A, &fondoa,TILE_ATTR_FULL(PAL1,FALSE,FALSE,FALSE,ind),0,0,TRUE,CPU);
-    VDP_setPalette(PAL2,elli_sprt.palette->data);
+    PAL_setPalette(PAL2,elli_sprt.palette->data,DMA);
     elli = SPR_addSprite(&elli_sprt,160,155,TILE_ATTR(PAL2,FALSE,FALSE,FALSE));
     
     VDP_setScrollingMode(HSCROLL_PLANE, VSCROLL_PLANE);
